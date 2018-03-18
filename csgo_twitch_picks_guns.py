@@ -3,13 +3,13 @@ import telnetlib
 from time import sleep
 import yaml
 
-HOST = "192.168.0.2"
-PORT = 2121
+config = yaml.safe_load(open('config.yaml'))
+weapons = config['available_weapons']
+HOST = config['host']
+PORT = config['port']
 welcome = "CSGO Remote Console Online"
 endl = "\n"
 
-config = yaml.safe_load(open('config.yaml'))
-weapons = config['available_weapons']
 
 # Runs commands on the csgo console
 # Sleeps after for rate limiting but does not block
