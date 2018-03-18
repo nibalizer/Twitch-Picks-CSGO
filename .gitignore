@@ -3,3 +3,4 @@ config.yaml
 js/config.json
 js/node_modules
 venv
+js/twitch_chat_log_*
