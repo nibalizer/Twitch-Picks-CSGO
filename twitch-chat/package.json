@@ -5,5 +5,8 @@
   "dependencies": {
     "express": "^4.15.2",
     "tmi.js": "^1.1.2"
+  },
+  "scripts": {
+    "start": "node index.js"
   }
 }
