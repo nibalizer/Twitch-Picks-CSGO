@@ -42,10 +42,12 @@ client.on('chat', function(channel, user, message, self) {
     if (err) throw err;
   });
   first_word = message.split(' ')[0];
-  if (word_count[first_word] == undefined) {
-    word_count[first_word] = 1;
-  } else {
-    word_count[first_word] += 1;
+  if (config.words.includes(first_word)) {
+    if (word_count[first_word] == undefined) {
+      word_count[first_word] = 1;
+    } else {
+      word_count[first_word] += 1;
+    }
   }
   // Reset word count object every 'period' seconds
   current_time = new Date();
