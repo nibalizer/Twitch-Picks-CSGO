@@ -20,6 +20,12 @@ csgo-poker is configured via ``config.yaml`` and twitch-chat via ``config.json``
 
 
 
+Build & Deploy
+--------------
+
+This app is deployed via docker. Inspect and run the scripts "build_app.sh" and "run_app.sh".
+
+
 Remote Console
 --------------
 
