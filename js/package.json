@@ -1,0 +1,9 @@
+{
+  "name": "twitch-chat-csgo-weapon-picker",
+  "version": "0.0.1",
+  "description": "Let twitch chat select a weapon for csgo",
+  "dependencies": {
+    "express": "^4.15.2",
+    "tmi.js": "^1.1.2"
+  }
+}
