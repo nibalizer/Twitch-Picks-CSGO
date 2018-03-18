@@ -65,6 +65,11 @@ app.get('/words', function(req, res){
   res.json(word_count);
 });
 
+app.get('/web_words', function(req, res){
+  res.sendFile(__dirname + '/web_words.html');
+});
+
+
 http.listen(3000, function(){
   console.log('listening on *:3000');
 });
