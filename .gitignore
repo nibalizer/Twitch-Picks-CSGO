@@ -1,6 +1,6 @@
 *.pyc
 config.yaml
-js/config.json
-js/node_modules
+twitch-chat/config.json
+twitch-chat/node_modules
 venv
-js/twitch_chat_log_*
+twitch-chat/twitch_chat_log_*
