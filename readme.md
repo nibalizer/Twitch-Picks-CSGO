@@ -5,6 +5,21 @@ Twitch-Picks-CSGO
 This is an application for csgo streamers. It hooks up twitch chat to the buy menu at the start of every round. This lets twitch spam weapon names into chat and whatever weapon twitch picks will be automatically purchased. Hopefully this helps chat feel more involved and everyone have a good time.
 
 
+
+Daemons
+-------
+
+This app has two daemons: csgo-poker and twitch-chat. Csgo-poker handles communication with csgo. It pulls information from twitch-chat over http. Twitch-chat hooks up to twitch chat via the IRC protocol, it collects chat and summazires weapon votes and exposes that information over http.
+
+
+
+Configuration
+-------------
+
+csgo-poker is configured via ``config.yaml`` and twitch-chat via ``config.json``, examples are provided.
+
+
+
 Remote Console
 --------------
 
