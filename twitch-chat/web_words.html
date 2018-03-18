@@ -10,7 +10,7 @@ setInterval(function() {
   $.get('/words', function(data){
     $("#data").html("");
     $.each (data, function(key, value) {
-        $("#data").append("<h2>" + key + ": " + value + "</h2>");
+        $("#data").append("<h2 color='white'>" + key + ": " + value + "</h2>");
     });
 
   });
