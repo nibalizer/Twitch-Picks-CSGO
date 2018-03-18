@@ -5,7 +5,9 @@ var config = require('./config.json');
 // Load libraries; instantiate express app and socket.io
 var tmi = require('tmi.js');
 var fs = require('fs');
-
+var express = require('express');
+var app = express();
+var http = require('http').Server(app);
 
 // Set up options for connection to twitch chat
 // Add channels in the config.json file
@@ -35,3 +37,12 @@ client.on('chat', function(channel, user, message, self) {
     if (err) throw err;
   });
 });
+
+app.get('/', function(req, res){
+  res.send("Hello World");
+});
+
+http.listen(3000, function(){
+  console.log('listening on *:3000');
+});
+
