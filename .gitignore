@@ -1,0 +1,4 @@
+*.pyc
+config.yaml
+js/config.json
+js/node_modules
