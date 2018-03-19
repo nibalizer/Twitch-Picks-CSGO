@@ -1,6 +1,8 @@
 *.pyc
+*.txt
 config.yaml
 twitch-chat/config.json
+csgo-poker/config.json
 twitch-chat/node_modules
 venv
 twitch-chat/twitch_chat_log_*
