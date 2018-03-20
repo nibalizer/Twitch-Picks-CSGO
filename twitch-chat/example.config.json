@@ -1,10 +1,11 @@
 {
   "twitch_identity": {
     "username": "nibalizer",
-    "password": "oauth:aljyqyy2elcaoz1jx2pdb6ttf5q3c6"
+    "password": "oauth:clsa15sjusl3n7s9d7hueueirkn6(not a real key)"
   },
-  "twitch_channels": ["opl"],
+  "twitch_channels": ["nibalizer"],
   "period": 30,
+  "allow_multivoting": true,
   "words": [
     "hkp2000",
     "elite",
