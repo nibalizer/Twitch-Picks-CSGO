@@ -2,7 +2,7 @@
 *.txt
 config.yaml
 twitch-chat/config.json
-csgo-poker/config.json
+csgo-poker/config.yaml
 twitch-chat/node_modules
 venv
 twitch-chat/twitch_chat_log_*
