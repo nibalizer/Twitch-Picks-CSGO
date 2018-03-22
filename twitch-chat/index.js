@@ -49,7 +49,7 @@ client.on('chat', function(channel, user, message, self) {
 
     if (config.words.includes(first_word)) {
       if (config.allow_multivoting == true) {
-        add_vote(first_word)
+        add_vote(first_word);
       }else if (config.allow_multivoting == false) {
         if (user_vote[user] == undefined){
           //add user and vote to var and vote
