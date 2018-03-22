@@ -48,9 +48,7 @@ client.on('chat', function(channel, user, message, self) {
     first_word = message.split(' ')[0];
 
     if (config.words.includes(first_word)) {
-      if (config.allow_multivoting == true) {
-        add_vote(first_word);
-      }else if (config.allow_multivoting == false) {
+      if (!config.allow_multivoting) {
         if (user_vote[user] == undefined){
           //add user and vote to var and vote
           user_vote[user] = first_word;
@@ -61,6 +59,8 @@ client.on('chat', function(channel, user, message, self) {
           user_vote[user] = first_word;
           add_vote(first_word);
         }
+      } else {
+        add_vote(first_word);
       }
     }
 });
