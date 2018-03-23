@@ -19,11 +19,18 @@ Configuration
 csgo-poker is configured via ``config.yaml`` and twitch-chat via ``config.json``, examples are provided.
 
 
+Dependencies
+--------------
+
+This app has dependencies that need to be installed to preform basic functionality:
+
+-Docker
+
 
 Build & Deploy
 --------------
 
-This app is deployed via docker. Inspect and run the scripts "build_app.sh" and "run_app.sh".
+This app is deployed via docker. Inspect and run the scripts "build_app.sh", "run_app.sh" and "stop_app.sh".
 
 
 Remote Console
