@@ -11,10 +11,6 @@ var http = require('http').Server(app);
 
 var word_count = {};
 var user_vote = {};
-var word_count_time = new Date();
-//t.setSeconds(t.getSeconds() + 10);
-
-var update_period = 5;
 
 // Set up options for connection to twitch chat
 // Add channels in the config.json file
@@ -29,8 +25,6 @@ var tmi_options = {
   identity: config.twitch_identity,
   channels: config.twitch_channels
 };
-
-setInterval(update, (update_period * 1000));
 
 // Connect to twitch
 var client = new tmi.client(tmi_options);
@@ -78,13 +72,9 @@ function sub_vote(word){
 }
 
 function update() {
-  // Reset word count and user vote objects every 'period' seconds
-  current_time = new Date();
-  if (current_time - word_count_time > (config.period * 1000)) {
-    word_count = {};
-    user_vote = {};
-    word_count_time = new Date();
-  }
+  // Reset word count and user vote objects whenever called
+  word_count = {};
+  user_vote = {};
 
 }
 
@@ -98,6 +88,11 @@ app.get('/words', function(req, res){
 
 app.get('/web_words', function(req, res){
   res.sendFile(__dirname + '/web_words.html');
+});
+
+app.delete('/reinitialize', function(req, res){
+  update();
+  res.sendStatus(200)
 });
 
 
