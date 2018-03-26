@@ -39,10 +39,6 @@ def choose_weapon():
 
 def reinitialize():
     r = requests.delete(url='http://twitch-chat:3000/reinitialize')
-    if r.status == 200:
-        print "Votes reinitialized"
-    else:
-        print "Failed to reinitialize votes"
 
 
 # Initialize csgo telnet connection
