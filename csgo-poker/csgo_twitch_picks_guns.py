@@ -34,7 +34,7 @@ def choose_weapon():
         print "%s: %s" % (key, value)
         words.append(key)
 
-    result = "buy {0}".format(words[-1])
+    result = "{0}".format(words[-1])
     return result
 
 
@@ -51,5 +51,5 @@ while True:
     tn.read_until("Reinitialized ")
     print "Round start"
     sleep(1.0)
-    command = choose_weapon()
-    run(command)
+    weapon = choose_weapon()
+    run("buy " + weapon)
