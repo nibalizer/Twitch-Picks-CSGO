@@ -1,4 +1,3 @@
-
 // Load Config File
 var config = require('./config.json');
 
@@ -15,7 +14,7 @@ var user_vote = {};
 var word_count_time = new Date();
 //t.setSeconds(t.getSeconds() + 10);
 
-var reset_period = 5;
+var update_period = 5;
 
 // Set up options for connection to twitch chat
 // Add channels in the config.json file
@@ -31,20 +30,16 @@ var tmi_options = {
   channels: config.twitch_channels
 };
 
+setInterval(update, (update_period * 1000));
+
 // Connect to twitch
 var client = new tmi.client(tmi_options);
 client.connect();
-
-setInterval(reset, (reset_period * 1000));
 
 // When a chat message comes in, write it to a file
 client.on('chat', function(channel, user, message, self) {
 
     var date = new Date();
-    log_line = date + " " + channel + " " + user.username + " " + message
-    fs.appendFile('twitch_chat_log_' + channel + '.txt', log_line + "\n", function (err) {
-      if (err) throw err;
-    });
     first_word = message.split(' ')[0];
 
     if (config.words.includes(first_word)) {
@@ -82,7 +77,7 @@ function sub_vote(word){
   }
 }
 
-function reset() {
+function update() {
   // Reset word count and user vote objects every 'period' seconds
   current_time = new Date();
   if (current_time - word_count_time > (config.period * 1000)) {
