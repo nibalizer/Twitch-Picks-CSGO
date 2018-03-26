@@ -37,6 +37,13 @@ def choose_weapon():
     result = "{0}".format(words[-1])
     return result
 
+def reinitialize():
+    r = requests.delete(url='http://twitch-chat:3000/reinitialize')
+    if r.status == 200:
+        print "Votes reinitialized"
+    else:
+        print "Failed to reinitialize votes"
+
 
 # Initialize csgo telnet connection
 tn = telnetlib.Telnet(HOST, PORT)
@@ -53,3 +60,4 @@ while True:
     sleep(1.0)
     weapon = choose_weapon()
     run("buy " + weapon)
+    reinitialize()
