@@ -4,6 +4,7 @@
     "password": "oauth:clsa15sjusl3n7s9d7hueueirkn6(not a real key)"
   },
   "twitch_channels": ["nibalizer"],
+  "html_theme": "default",
   "period": 30,
   "allow_multivoting": true,
   "words": [

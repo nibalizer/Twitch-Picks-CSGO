@@ -24,11 +24,15 @@ Dependencies
 
 This app has dependencies that need to be installed to preform basic functionality:
 
--Docker
+Linux:
+
+- Docker
 
 
 Build & Deploy
 --------------
+
+Linux:
 
 This app is deployed via docker. Inspect and run the scripts "build_app.sh", "run_app.sh" and "stop_app.sh".
 
