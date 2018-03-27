@@ -42,7 +42,7 @@ client.on('chat', function(channel, user, message, self) {
   var date = new Date();
   first_word = message.split(' ')[0];
 
-  if (config.words.includes(first_word)) return;
+  if (!config.words.includes(first_word)) return;
 
   if (config.allow_multivoting) {
     add_vote(first_word);
