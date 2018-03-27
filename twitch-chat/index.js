@@ -88,9 +88,8 @@ function update() {
 
 }
 
-app.use(express.json());
-
 app.use('*', function(req, res, next) {
+  //deal with content security policy
   //normally unsafe, but running localy, so the only person that can 'inject' xss is the local user... so,whatever.
   res.header("Access-Control-Allow-Origin", "'*'");
   res.setHeader("Content-Security-Policy", "default-src * 'unsafe-inline' 'unsafe-eval'");
@@ -112,8 +111,8 @@ app.get('/web_words', function(req, res){
   res.sendFile(__dirname + '/web_words.html');
 });
 
-app.get('/config.json', function (req, res) {
-  res.sendFile(__dirname + '/config.json');
+app.get('/config/theme', function (req, res) {
+  res.send(config.html_theme);
 });
 
 http.listen(3000, function(){

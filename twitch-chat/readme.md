@@ -16,9 +16,9 @@ Provides sorted json list of words and votes for that word.
 
 Provides formatted html for key value pairs. Good for showing to a stream.
 
-/config.json
+/config/theme
 
-Provides a live view for the config file that you have made. (don't show this on stream, it contains your oauth key)
+Returns a string; the current theme, as determined by the config file.
 
 
 Parameters:
@@ -32,7 +32,7 @@ config.json:
 
 * twitch_channels: The channels this app will connect to and read the messages of. Typically your Twitch.tv username.
 
-* html_theme: allows for the changing of themes. (more below)
+* html_theme: allows for the changing of themes for /web_words. (more below)
 
 * period: Refers to how many seconds between reseting the votes.
 
