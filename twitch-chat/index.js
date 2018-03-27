@@ -39,25 +39,27 @@ client.connect();
 // When a chat message comes in, write it to a file
 client.on('chat', function(channel, user, message, self) {
 
-    var date = new Date();
-    first_word = message.split(' ')[0];
+  var date = new Date();
+  first_word = message.split(' ')[0];
 
-    if (config.words.includes(first_word)) {
-      if (!config.allow_multivoting) {
-        if (user_vote[user] == undefined){
-          //add user and vote to var and vote
-          user_vote[user] = first_word;
-          add_vote(first_word);
-        }else {
-          //change vote
-          sub_vote(user_vote[user]);
-          user_vote[user] = first_word;
-          add_vote(first_word);
-        }
-      } else {
-        add_vote(first_word);
-      }
-    }
+  if (config.words.includes(first_word)) return;
+
+  if (config.allow_multivoting) {
+    add_vote(first_word);
+    return;
+  }
+
+  if (user_vote[user] == undefined){
+    //add user and vote to var and vote
+    user_vote[user] = first_word;
+    add_vote(first_word);
+  } else {
+    //change vote
+    sub_vote(user_vote[user]);
+    user_vote[user] = first_word;
+    add_vote(first_word);
+  }
+  
 });
 
 function add_vote(word){
