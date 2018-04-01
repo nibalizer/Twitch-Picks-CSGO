@@ -55,4 +55,6 @@ Be sure to make your own theme. To use it, just put the name of the folder as th
 
 * terminal&#42;: Command line like interface.
 
+* pastel-pink: 'kawaii' theme that is pink and more pink with white 
+
 &#42; Has a config file
