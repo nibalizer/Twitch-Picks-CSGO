@@ -6,7 +6,11 @@
     "express": "^4.15.2",
     "tmi.js": "^1.1.2"
   },
+  "devDependencies": {
+    "jest": "^22.4.3"
+  },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "jest"
   }
 }
