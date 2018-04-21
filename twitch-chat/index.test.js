@@ -3,6 +3,7 @@ const twitch_votes = require('./index');
 
 beforeEach(() => {
   delete twitch_votes['word_count']['ak47'];
+  delete twitch_votes['word_count']['awp'];
 });
 
 test('add a vote for ak47 and validate', () => {
