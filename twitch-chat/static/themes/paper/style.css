@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Nanum+Pen+Script');
+* {
+	font-family: 'Nanum Pen Script', cursive;
+	color: #222;
+	font-weight: 200;
+}
+html {
+	background-image: url(/static/themes/paper/paper.jpg);
+	margin: 0 4vw;
+}
+h1 {
+	font-size: 20pt;
+}
+h2 {
+	font-size: 16pt;
+}
