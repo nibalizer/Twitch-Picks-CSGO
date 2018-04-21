@@ -11,10 +11,6 @@ var http = require('http').Server(app);
 
 var word_count = {};
 var user_vote = {};
-var word_count_time = new Date();
-//t.setSeconds(t.getSeconds() + 10);
-
-var update_period = 5;
 
 // Set up options for connection to twitch chat
 // Add channels in the config.json file
@@ -30,13 +26,11 @@ var tmi_options = {
   channels: config.twitch_channels
 };
 
-setInterval(update, (update_period * 1000));
-
 // Connect to twitch
 var client = new tmi.client(tmi_options);
 client.connect();
 
-// When a chat message comes in, write it to a file
+// When a chat message comes in, record the vote
 client.on('chat', function(channel, user, message, self) {
 
   var date = new Date();
@@ -80,13 +74,9 @@ function sub_vote(word){
 }
 
 function update() {
-  // Reset word count and user vote objects every 'period' seconds
-  current_time = new Date();
-  if (current_time - word_count_time > (config.period * 1000)) {
-    word_count = {};
-    user_vote = {};
-    word_count_time = new Date();
-  }
+  // Reset word count and user vote objects whenever called
+  word_count = {};
+  user_vote = {};
 
 }
 
@@ -117,7 +107,19 @@ app.get('/config/theme', function (req, res) {
   res.send(config.html_theme);
 });
 
-http.listen(3000, function(){
-  console.log('listening on *:3000');
+app.delete('/reinitialize', function(req, res){
+  update();
+  res.sendStatus(200)
 });
 
+
+var mod = {};
+
+mod['add_vote'] = add_vote;
+mod['sub_vote'] = sub_vote;
+mod['word_count'] = word_count;
+mod['user_vote'] = user_vote;
+mod['update'] = update;
+mod['app'] = app;
+
+module.exports = mod;
