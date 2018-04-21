@@ -30,7 +30,7 @@ var tmi_options = {
 var client = new tmi.client(tmi_options);
 client.connect();
 
-// When a chat message comes in, write it to a file
+// When a chat message comes in, record the vote
 client.on('chat', function(channel, user, message, self) {
 
   var date = new Date();
@@ -112,6 +112,14 @@ app.delete('/reinitialize', function(req, res){
   res.sendStatus(200)
 });
 
-http.listen(3000, function(){
-  console.log('listening on *:3000');
-});
+
+var mod = {};
+
+mod['add_vote'] = add_vote;
+mod['sub_vote'] = sub_vote;
+mod['word_count'] = word_count;
+mod['user_vote'] = user_vote;
+mod['update'] = update;
+mod['app'] = app;
+
+module.exports = mod;
