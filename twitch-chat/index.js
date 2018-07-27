@@ -53,7 +53,7 @@ client.on('chat', function(channel, user, message, self) {
     user_vote[user] = first_word;
     add_vote(first_word);
   }
-  
+
 });
 
 function add_vote(word){
