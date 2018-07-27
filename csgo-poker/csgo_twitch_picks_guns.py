@@ -26,7 +26,7 @@ def choose_weapon():
     r = requests.get(url='http://twitch-chat:3000/words')
     weapons = r.json()
     if len(weapons) == 0:
-        return "buy " + random.choice(available_weapons)
+        return str(random.choice(available_weapons))
     words = []
     # shamelessly stolen from:
     # https://www.saltycrane.com/blog/2007/09/how-to-sort-python-dictionary-by-keys/
