@@ -10,7 +10,7 @@
     "jest": "^22.4.3"
   },
   "scripts": {
-    "start": "node index.js",
+    "start": "node server.app",
     "test": "jest"
   }
 }
