@@ -1,0 +1,19 @@
+* {
+	font-family: Arial;
+	font-weight: 500;
+	color: #fff;
+	text-align: center;
+}
+html {
+	background-color: #ffcceb;
+}
+h1 {
+	font-size: 20pt;
+	text-shadow: 3px 3px #ef96ff;
+	margin 0;
+	padding-bottom: 3vh;
+}
+h2 {
+	font-size: 16pt;
+	text-shadow: 3px 3px #ef96ff;
+}
