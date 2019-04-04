@@ -33,7 +33,6 @@ client.connect();
 // When a chat message comes in, record the vote
 client.on('chat', function(channel, user, message, self) {
 
-  var date = new Date();
   first_word = message.split(' ')[0];
 
   if (!config.words.includes(first_word)) return;
@@ -55,6 +54,19 @@ client.on('chat', function(channel, user, message, self) {
   }
 
 });
+
+function top_vote_str(){
+    const word = "";
+    const max = 0;
+	Object.keys(word_count).forEach(function(key){ 
+		if (word_count[key] > max) { 
+			max = word_count[key];
+			word = key;
+		};
+	});
+    return word;
+}
+
 
 function add_vote(word){
   // Add a vote to `word`
@@ -80,6 +92,7 @@ function update() {
 
 }
 
+
 app.use('*', function(req, res, next) {
   //deal with content security policy
   //normally unsafe, but running localy, so the only person that can 'inject' xss is the local user... so,whatever.
@@ -97,6 +110,10 @@ app.get('/', function(req, res){
 
 app.get('/words', function(req, res){
   res.json(word_count);
+});
+
+app.get('/api/v1/camera', function(req, res){
+  res.send(top_vote_str());
 });
 
 app.get('/web_words', function(req, res){
