@@ -1,8 +1,9 @@
-Twitch Chat
------------
+Twitch Votes App
+================
 
-This is the daemon that connects to twitch chat.
-It exports the 'selected weapon' over http and the python code calls into it.
+
+For many reasons, it's useful to pull votes out of twitch chat. This daemon lets you pull votes from twitch and expose the results over REST, leaving you free to write code that matters more.
+
 
 
 Endpoints:
